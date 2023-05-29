@@ -47,14 +47,18 @@ input:focus
 }
 .container
 {
-    width: 100%;
-    min-height: 100vh;
-    background-position: center;
-    background-size: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1000px;
+    min-height: 500px;
+    border-radius: 15px;
     display: flex;
     justify-content: center;
-    flex-direction: column;
     align-items: center;
+    z-index: 1;
+    margin: 0 auto;
 }
 #submit
 {
@@ -87,12 +91,6 @@ input:focus
 {
     font-size: 50px;
     font-weight: 500;
-}
-.container h3
-{
-    font-size: 30px;
-    font-weight: 500;
-    margin-bottom: 10px;
 }
 a
 {
@@ -136,4 +134,8 @@ a:focus
 {
     font-size: 20px;
     font-weight: 500;
+}
+.error
+{
+    color: #FF0000;
 }

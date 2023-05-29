@@ -24,71 +24,19 @@ $antwoord1Err = $antwoord2Err = $antwoord3Err = $antwoord4Err = $antwoord5Err = 
         <?php
         if ($_SERVER['REQUEST_METHOD'] === 'POST')
         {
-            // check if the fields only contain letters and whitespace
-            if (!preg_match("/^[a-zA-Z ]*$/",$antwoord1)) {
-                $antwoord1Err = "Only letters and white space allowed";
-                $antwoord1 = "";
+            for ($i = 1; $i <= 8; $i++) {
+                if (empty($_POST["antwoord$i"])) {
+                    ${"antwoord{$i}Err"} = "* Dit veld is verplicht";
+                } else {
+                    if (preg_match("/^[a-zA-Z-' ]*$/", $_POST["antwoord$i"])) {
+                        ${"antwoord$i"} = $_POST["antwoord$i"];
+                    } else {
+                        ${"antwoord$i"} = "";
+                        ${"antwoord{$i}Err"} = " Gebruik alleen letters en spaties!";
+                    }
+                }
             }
-            else
-            {
-                $antwoord1 = $_POST["antwoord1"];
-            }
-            if (!preg_match("/^[a-zA-Z ]*$/",$antwoord2)) {
-                $antwoord2Err = "Only letters and white space allowed";
-                $antwoord2 = "";
-            }
-            else
-            {
-                $antwoord2 = $_POST["antwoord2"];
-            }
-            if (!preg_match("/^[a-zA-Z ]*$/",$antwoord3)) {
-                $antwoord3Err = "Only letters and white space allowed";
-                $antwoord3 = "";
-            }
-            else
-            {
-                $antwoord3 = $_POST["antwoord3"];
-            }
-            if (!preg_match("/^[a-zA-Z ]*$/",$antwoord4)) {
-                $antwoord4Err = "Only letters and white space allowed";
-                $antwoord4 = "";
-            }
-            else
-            {
-                $antwoord4 = $_POST["antwoord4"];
-            }
-            if (!preg_match("/^[a-zA-Z ]*$/",$antwoord5)) {
-                $antwoord5Err = "Only letters and white space allowed";
-                $antwoord5 = "";
-            }
-            else
-            {
-                $antwoord5 = $_POST["antwoord5"];
-            }
-            if (!preg_match("/^[a-zA-Z ]*$/",$antwoord6)) {
-                $antwoord6Err = "Only letters and white space allowed";
-                $antwoord6 = "";
-            }
-            else
-            {
-                $antwoord6 = $_POST["antwoord6"];
-            }
-            if (!preg_match("/^[a-zA-Z ]*$/",$antwoord7)) {
-                $antwoord7Err = "Only letters and white space allowed";
-                $antwoord7 = "";
-            }
-            else
-            {
-                $antwoord7 = $_POST["antwoord7"];
-            }
-            if (!preg_match("/^[a-zA-Z ]*$/",$antwoord8)) {
-                $antwoord8Err = "Only letters and white space allowed";
-                $antwoord8 = "";
-            }
-            else
-            {
-                $antwoord8 = $_POST["antwoord8"];
-            }
+            
             if (!empty($antwoord1) && !empty($antwoord2) && !empty($antwoord3) && !empty($antwoord4) && !empty($antwoord5) && !empty($antwoord6) && !empty($antwoord7) && !empty($antwoord8))
             {
                 ?>
@@ -96,14 +44,15 @@ $antwoord1Err = $antwoord2Err = $antwoord3Err = $antwoord4Err = $antwoord5Err = 
                     <h1>Paniek</h1>
                 </div>
                 <h2>Er heerst paniek in het koninkrijk <?php echo $antwoord3?>, Koning <?php echo $antwoord6?> is ten einde raad en als Koning <?php echo $antwoord6?><br> ten einde raad is, dan roept hij zijn te-einde-raadsheer <?php echo $antwoord2?>.<br></h2>
-                <h3>"<?php echo $antwoord2?>! Het is een ramp! Het is een schande!"</h3>
-                <h3>"Sire, Majesteit, Uwe Luidruchtigheid, wat is er aan de hand?"</h3>
-                <h3>"Mijn <?php echo $antwoord1?> is verdwenen! Zo maar, zonder waarschuwing. En ik had net <?php echo $antwoord5?> voor hem gekocht!"</h3>
-                <h3>"Majesteit, uw <?php echo $antwoord1?> komt vast vanzelf weer terug?"</h3>
-                <h3>"Ja, da's leuk en aardig, maar hoe moet ik in de tussentijd <?php echo $antwoord8?> leren?"</h3>
-                <h3>"Maar Sire, daar kunt u toch uw <?php echo $antwoord7?> voor gebruiken?"</h3>
-                <h3>"<?php echo $antwoord2?>, je hebt helemaal gelijk! Wat zou ik doen als ik jou niet had?"</h3>
-                <h3>"<?php echo $antwoord4?>, Sire."</h3>
+                <br>
+                <h2>"<?php echo $antwoord2?>! Het is een ramp! Het is een schande!"</h2>
+                <h2>"Sire, Majesteit, Uwe Luidruchtigheid, wat is er aan de hand?"</h2>
+                <h2>"Mijn <?php echo $antwoord1?> is verdwenen! Zo maar, zonder waarschuwing. En ik had net <?php echo $antwoord5?> voor hem gekocht!"</h2>
+                <h2>"Majesteit, uw <?php echo $antwoord1?> komt vast vanzelf weer terug?"</h2>
+                <h2>"Ja, da's leuk en aardig, maar hoe moet ik in de tussentijd <?php echo $antwoord8?> leren?"</h2>
+                <h2>"Maar Sire, daar kunt u toch uw <?php echo $antwoord7?> voor gebruiken?"</h2>
+                <h2>"<?php echo $antwoord2?>, je hebt helemaal gelijk! Wat zou ik doen als ik jou niet had?"</h2>
+                <h2>"<?php echo $antwoord4?>, Sire."</h2>
             <?php
             }
             
