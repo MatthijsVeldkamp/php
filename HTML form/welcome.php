@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
         else
         {
             $naam = "";
-            $nameErr = "Nice try buddy";
+            $nameErr = "Only letters and white space allowed";
         }
        
         
