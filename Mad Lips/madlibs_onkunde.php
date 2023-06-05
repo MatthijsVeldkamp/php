@@ -35,20 +35,19 @@ $antwoord1Err = $antwoord2Err = $antwoord3Err = $antwoord4Err = $antwoord5Err = 
                     }
                 }
             }
-            
             if (!empty($antwoord1) && !empty($antwoord2) && !empty($antwoord3) && !empty($antwoord4) && !empty($antwoord5) && !empty($antwoord6) && !empty($antwoord7))
             {
                 ?>
                 <div class="header">
                     <h1>Onkunde</h1>
                 </div>
-                    <h2>Er zijn veel mensen die niet kunnen <?php echo $antwoord1?>.</h2>
+                    <p>Er zijn veel mensen die niet kunnen <?php echo $antwoord1?>.</p>
                     <br>
-                    <h2>Neem nou <?php echo $antwoord2?>.</h2>
-                    <h2>Zelfs met de hulp van een <?php echo $antwoord4?> of zelfs <?php echo $antwoord3?> kan <?php echo $antwoord2?> niet <?php echo $antwoord1?>.</h2>
-                    <h2>Dat heeft niet te maken met een gebrek aan <?php echo $antwoord5?>, maar met een te veel aan <?php echo $antwoord6?>.</h2>
-                    <h2>Te veel <?php echo $antwoord6?> leidt tot <?php echo $antwoord7?> en dat is niet goed als je wilt <?php echo $antwoord1?>.</h2>
-                    <h2>Helaas voor <?php echo $antwoord2?>.</h2>
+                    <p>Neem nou <?php echo $antwoord2?>.</p>
+                    <p>Zelfs met de hulp van een <?php echo $antwoord4?> of zelfs <?php echo $antwoord3?> kan <?php echo $antwoord2?> niet <?php echo $antwoord1?>.</p>
+                    <p>Dat heeft niet te maken met een gebrek aan <?php echo $antwoord5?>, maar met een te veel aan <?php echo $antwoord6?>.</p>
+                    <p>Te veel <?php echo $antwoord6?> leidt tot <?php echo $antwoord7?> en dat is niet goed als je wilt <?php echo $antwoord1?>.</p>
+                    <p>Helaas voor <?php echo $antwoord2?>.</h2>
                     
             <?php
             }

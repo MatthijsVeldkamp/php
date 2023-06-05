@@ -1,7 +1,7 @@
 <?php
 $nameErr = $emailErr = "";
 $naam = $email = "";
-// check if a request has been made
+// checken of er een post request is gedaan
 if ($_SERVER['REQUEST_METHOD'] === 'POST')
 {
     $naam = $_POST["naam"];
@@ -11,8 +11,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
         $nameErr = "* Name is required";
     }
     else
-    {
-        // check if name only contains letters and whitespace
+    { 
+        
+        // checken of de naam alleen letters en spaties bevat
         if (preg_match("/^[a-zA-Z-' ]*$/",$_POST["naam"]))
         {
             $naam = $_POST["naam"];
