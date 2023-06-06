@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
     { 
         
         // checken of de naam alleen letters en spaties bevat
-        if (preg_match("/^[a-zA-Z-' ]*$/",$_POST["naam"]))
+        if (!preg_match("/^[a-zA-Z-' ]*$/",$_POST["naam"]))
         {
             $naam = $_POST["naam"];
         }

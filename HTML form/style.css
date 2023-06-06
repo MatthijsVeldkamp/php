@@ -69,6 +69,7 @@ body
     outline: none;
     background: transparent;
     border: 1px solid #ffc800;
+    cursor: pointer;
     font-size: 16px;
     color: #ffc800;
     z-index: 999;
@@ -100,7 +101,7 @@ body
 }
 .container input:focus
 {
-    transform: scale(1.1);
+    transform: scale(0.9);
     transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 .container #submit
