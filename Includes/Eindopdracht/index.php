@@ -43,5 +43,6 @@
         // copyright
         include("content/footer.php");
     ?>
+    <script defer src="script.js"></script>
 </body>
 </html>
