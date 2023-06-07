@@ -22,7 +22,14 @@ function readSubjects(){
     $dbConnection = null;
     return $result;
 }
-
+function countSubjects(){
+    $dbConnection = createDatabaseConnection();
+    $stmt = $dbConnection->prepare("SELECT COUNT(*) FROM dynamic_webpage");
+    $stmt->execute();
+    $result = $stmt->fetchColumn();
+    $dbConnection = null;
+    return $result;
+}
 
 function readSubject($id){
     $dbConnection = createDatabaseConnection();
