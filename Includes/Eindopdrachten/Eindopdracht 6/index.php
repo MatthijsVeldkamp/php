@@ -124,26 +124,3 @@ if ($currentpage > $amount_of_subjects) {
     <script defer src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <img id="avatarimg" src="images/<?php $subjects = readSubject($currentpage);
-    echo $subjects["avatar"];
-?>"> -->
