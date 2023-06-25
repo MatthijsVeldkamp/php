@@ -18,10 +18,10 @@ if(isset($_GET['page'])){
 }else{
     $currentpage = 1;
 }
-// Count how many subjects there are in the database
-$amount_of_subjects = countSubjects();
-if ($currentpage > $amount_of_subjects) {
+$subjects = readSubject($currentpage);
+if ($subjects == FALSE) {
     $currentpage = 1;
+    $subjects = readSubject($currentpage);
 }
     // if(isset($_GET['page'])){
     //     $page = $_GET['page'];
@@ -106,7 +106,7 @@ if ($currentpage > $amount_of_subjects) {
             ?>
             </h1>
             <h1 id="armor">Armor:
-            <?php $subjects = readSubject($currentpage);
+            <?php
             echo $subjects["armor"];
             ?>
             </h1>

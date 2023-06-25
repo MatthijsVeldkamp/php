@@ -59,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
     {
         ?>
         <div class="container">
-        <form action="welcome.php" method="post">
+        <form action="signup.php" method="post">
             <label for="naam">Naam:</label>
             <div id="username"></div>
             <input type="text" name="naam" id="naam" value=<?php echo $naam?>><span id="nameerr"><?php echo $nameErr?><br></span>
