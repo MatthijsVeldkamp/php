@@ -14,6 +14,25 @@ function createDatabaseConnection(){
         echo "Connection failed: " . $e->getMessage();
     }
 }
+function ReadCharacter($id)
+{
+    $dbConnection = createDatabaseConnection();
+    $stmt = $dbConnection->prepare("SELECT * FROM characters WHERE id=:id");
+    $stmt->bindParam(":id", $id);
+    $stmt->execute();
+    $result = $stmt->fetch();
+    $dbConnection = null;
+    return $result;
+}
+function ReadCharacters()
+{
+    $dbConnection = createDatabaseConnection();
+    $stmt = $dbConnection->prepare("SELECT * FROM characters");
+    $stmt->execute();
+    $result = $stmt->fetchAll();
+    $dbConnection = null;
+    return $result;
+}
 function command($cmd){
     $dbConnection = createDatabaseConnection();
     $stmt = $dbConnection->prepare($cmd);
@@ -26,10 +45,6 @@ function command($cmd){
 function getAllCharacters(){
     $characters = command("SELECT count(id) FROM characters");
     return $characters[0][0];
-}
-function getCharacter($cmd, $id){
-    $character = command($cmd+" WHERE id="+$id);
-    return $character[0];
 }
 ?>
 
